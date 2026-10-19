@@ -2,7 +2,6 @@ from node import Node
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
-        self.tail = None
         self.length = 0
 
     def __str__(self):
@@ -12,7 +11,9 @@ class SinglyLinkedList:
         return f"SinglyLinkedList({self.head})"
 
     def __eq__(self, other):
-        return self.head == other.head
+        if not isinstance(other, SinglyLinkedList):
+            return NotImplemented
+        return self.to_array() == other.to_array()
     
     def __len__(self):
         return self.length
@@ -58,7 +59,7 @@ class SinglyLinkedList:
             current = current.next
         return None
     
-    def get(self, index) -> int:
+    def get(self, index) -> int | None:
         if index < 0 or index >= self.length:
             return None
         current = self.head
