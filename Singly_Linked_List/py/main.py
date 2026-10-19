@@ -1,0 +1,16 @@
+from singly_linked_list import SinglyLinkedList
+if __name__ == "__main__":
+    singly_linked_list = SinglyLinkedList()
+    singly_linked_list.append(1)
+    singly_linked_list.append(2)
+    singly_linked_list.append(3)
+    singly_linked_list.print()
+    singly_linked_list.reverse()
+    singly_linked_list.print()
+    print(singly_linked_list.size())
+    print(singly_linked_list.is_empty())
+    print(singly_linked_list.to_array())
+    print(singly_linked_list.find(2))
+    print(singly_linked_list.get(1))
+    print(singly_linked_list.remove(2))
+    print(singly_linked_list.remove_at(1))
