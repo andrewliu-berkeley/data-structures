@@ -15,7 +15,7 @@ void SinglyLinkedList::push_front(int value){
 //Insert at the end
 void SinglyLinkedList::push_back(int value){
     Node *node = new Node(value);
-    if (this->head ==  nullptr){
+    if (this->head == nullptr){
         head = node;
         this->length++;
         return;
