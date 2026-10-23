@@ -6,8 +6,7 @@ class Stack:
 
     def push(self, value):
         if self.top == self.capacity - 1:
-            print("Stack overflow")
-            return self
+            raise IndexError("Stack overflow")
 
         self.top += 1
         self.items[self.top] = value
@@ -15,8 +14,7 @@ class Stack:
 
     def pop(self):
         if self.top == -1:
-            print("Stack underflow")
-            return None
+            raise IndexError("Stack overflow")
 
         value = self.items[self.top]
         self.items[self.top] = None
@@ -25,15 +23,14 @@ class Stack:
 
     def peek(self):
         if self.top == -1:
-            print("Stack underflow")
-            return None
+            raise IndexError("Stack underflow")
+        
         value = self.items[self.top]
         return value
 
     def peek_from_top(self, index):
-        if index >= self.top:
-            print("Stack item not exist")
-            return None
+        if index < 0 or index >= self.top:
+            raise IndexError("Stack underflow/overflow")
         temp = self.top
         for _ in range (index):
             temp -= 1
